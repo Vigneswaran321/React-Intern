@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Typography, CircularProgress } from '@mui/material';
+import { Container, Checkbox, CircularProgress, Typography } from '@mui/material';
 import axios from 'axios';
 
 const NotesList = () => {
@@ -31,13 +31,14 @@ const NotesList = () => {
 
   return (
     <Container>
-      <Typography variant="h4" component="h1" align="center" gutterBottom>
+       <Typography variant="h4" component="h1" align="center" gutterBottom>
         Notes List
       </Typography>
       {notes.map((note) => (
         <div key={note.id}>
-          <Typography variant="h6">{note.title}</Typography>
-          <Typography>{note.content}</Typography>
+          <Checkbox />
+          <label>{note.title}</label>
+          <p>{note.content}</p>
           <hr />
         </div>
       ))}
